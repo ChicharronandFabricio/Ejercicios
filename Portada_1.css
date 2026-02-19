@@ -1,0 +1,71 @@
+button { /*Se le dara estilo al boton, afecta al boton entero*/
+    border: none; /*quita el borde del boton o lo edita*/
+    position: relative;/*Controla las animaciones, referencia para el before y after*/
+    width: 450px;/*ancho imagen*/
+    height: 250px;/*alto imagen*/
+    padding: 0;/*espacio interno boton*/
+    z-index: 2;/*definir en que capa esta*/
+    cursor: pointer;
+    background-color: transparent;
+    transform: translateY(8px);
+}
+
+button:after {
+    content: "";
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0px 0 0 0 white;
+    transition: all 2s ease;
+}
+
+button:hover:after {
+    box-shadow: 0px -13px 56px 12px white;
+}
+
+button span {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 39%;
+    font-weight: 200;
+    font-size: 30px;
+    letter-spacing: 3px;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    color:black;
+    transition: all 2s ease;
+}
+
+button:hover span {
+    color:blue
+}
+
+button:before {
+    content:"";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: black;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    transition: all 1s ease;
+    /*forma del imagen*/-webkit-mask: url("https://cdn.worldvectorlogo.com/logos/jordan-2.svg") no-repeat 50% 50%;
+    /*forma del imagen*/mask: url("https://cdn.worldvectorlogo.com/logos/jordan-2.svg") no-repeat 50% 50%;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+button:hover:before {
+    width: 100%;
+}
+
+body { /* centrar el boton en la pagina*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: lightgray;
+}
